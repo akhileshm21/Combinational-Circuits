@@ -1,30 +1,11 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 13.09.2026 11:22:22
-// Design Name: 
-// Module Name: Fulladder_gate
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
-module Fulladder_gate(input A,B,Cin,output S,Cout);
-wire x1,x2,x3;
-xor (x1,A,B);
-and(x2,A,B);
-xor(S,Cin,x1);
-and (x3,Cin,x1);
-or (Cout,x2,x3);
+module Fulladder_Gate(input A,B,Cin,output S,Cout);
+wire x1,x2,x3;      //The physical connections between each gates
+xor s1(x1,A,B);
+and s2(x2,A,B);
+xor s3(S,Cin,x1);
+and s4(x3,Cin,x1);
+or  s5(Cout,x2,x3);
 endmodule
